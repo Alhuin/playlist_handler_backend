@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "playlist_handler"
+version = "0.1.0"
+description = "playlist handler backend in django"
+authors = ["Alhuin"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0"
+djangorestframework = "^3.13.1"
+mysqlclient = "^2.1.0"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.10.1"
+black = "^21.12b0"
+flake8 = "^4.0.1"
+coverage = "^6.2"
+pre-commit = "^2.16.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

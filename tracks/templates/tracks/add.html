@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Track</title>
+</head>
+<body>
+    <form action="{% url 'tracks:create' %}" method="post" id="add_form">
+        {% csrf_token %}
+        <legend><h1>Add a track</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <input type="text" name="url" id="url" />
+        <label for="url"></label>
+        <input type="submit" value="Get links" id="submit_btn"/>
+    </form>
+    <a href="{% url 'tracks:index' %}">Home</a>
+    <script type="text/javascript">
+        document.getElementById("add_form").addEventListener("submit", () => {
+            document.getElementById("submit_btn").disabled = true
+        });
+    </script>
+</body>
+</html>

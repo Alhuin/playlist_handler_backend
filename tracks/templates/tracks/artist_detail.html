@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+    <img src="{{ artist.image }}" alt="cover" height="400px" width="400px">
+    <legend><h1>{{ artist.name }}</h1></legend>
+    <ul>
+    {% for link in artist.link_set.all %}
+        <li><a href="{{ link.url }}">{{ link.service }}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'tracks:index' %}">Home</a>
+</body>
+</html>

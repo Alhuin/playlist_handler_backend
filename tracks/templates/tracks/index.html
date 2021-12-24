@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    {% if latest_tracks_list %}
+        <ul>
+        {% for track in latest_tracks_list %}
+            <li><a href="{% url 'tracks:track_detail' track.id %}">{{ track }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tracks are available.</p>
+    {% endif %}
+    <a href="{% url 'tracks:add' %}">Add a track ?</a>
+</body>
+</html>

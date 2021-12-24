@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+    <img src="{{ track.image }}" alt="cover" height="400px" width="400px">
+    <h1>
+    {% for artist in track.artists.all %}
+        <a href="{% url 'tracks:artist_detail' artist.pk %}">{{ artist }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+         - {{ track.title }}
+    </h1>
+    <ul>
+    {% for link in track.link_set.all %}
+        <li><a href="{{ link.url }}">{{ link.service }}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'tracks:index' %}">Home</a>
+</body>
+</html>
